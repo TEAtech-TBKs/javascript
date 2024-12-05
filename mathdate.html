@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>date</p>
+    <script>
+// Math.round(x)	Returns x rounded to its nearest integer
+// Math.ceil(x)	Returns x rounded up to its nearest integer
+// Math.floor(x)	Returns x rounded down to its nearest integer
+// Math.trunc(x)	Returns the integer part of x (new in ES6)
+// etc check https://www.w3schools.com/js/js_math.asp
+
+    let Euler =  Math.E        // returns Euler's number
+    let Pi =  Math.PI       // returns PI
+    let SquareRoot =  Math.SQRT2    // returns the square root of 2
+    let SquareRoot1_2 =  Math.SQRT1_2  // returns the square root of 1/2
+    let Log2 = Math.LN2      // returns the natural logarithm of 2
+    let log10 = Math.LN10     // returns the natural logarithm of 10
+    let log2e = Math.LOG2E    // returns base 2 logarithm of E
+    let baselog10 =  Math.LOG10E   // returns base 10 logarithm of E
+        let weekDayWord = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ]
+        let date = new Date()
+        let year = date.getFullYear()
+        let month = date.getMonth()
+        let weekday = date.getDay()
+        let time = date.getHours()
+        let minute = date.getMinutes()
+        console.log(weekday)      
+        console.log(date)
+        console.log(year)
+        console.log(month)
+        console.log(time)
+        console.log(minute)
+    </script>
+</body>
+</html>

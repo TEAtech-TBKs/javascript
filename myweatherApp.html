@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      background-image: url(./roof.avif);
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      justify-items: center;
+    }
+    .weather{
+      color: darkslateblue;
+      text-shadow: 1px 1px 1px 1px cyan;
+    }
+    .container{
+      background: white;
+      width: 50vh;
+      height: 50vh;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="weather">
+    <h1 class="first-text">
+      Welcome to our weather page
+    </h1>
+    <h3 class="next-text">
+      Enter city to search
+    </h3>
+  </div>
+  <div class="container">
+<h1 class="first">
+  Weather
+</h1>
+<input type="search" placeholder="Enter city..." name="new" id="userQuery"><button class="enter"  onclick="fetchweather()">search</button>
+  </div>
+  <script>
+    const fetchWeather = asyn () => {
+      let city = document.getElementById("userquery").value
+      try{
+        let response = await fetch(
+          `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={efd1e306de5310f3e8d65aa980812bdc}
+`
+        ).then( asyn (response) =>{
+          if (response.ok){
+            let data = await response.json();
+            console.log(response);
+            console.log(data);
+            show +=``
+          }
+        })
+      } catch (error){}
+    }
+  </script>
+</body>
+</html>

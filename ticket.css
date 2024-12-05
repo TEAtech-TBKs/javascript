@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+}
+form{
+    border: 1px solid blue;
+    border-radius: 0.68rem;
+    color: darkblue;
+}
+button{
+    background-color: blue;
+    border-radius: 0.28rem;
+    border: none;
+    color: white;
+    padding: 0.2rem 2rem;
+    margin-bottom: 0.6rem;
+}

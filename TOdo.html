@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=TO, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="TOdo.css">
+    <script src="TOdo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="contain">
+        <h1>TEAtech</h1>
+        <i class="fa fa-bars"></i>
+    </header>
+    <div class="fr1">
+    <form action="">
+        <input class="profile" type="file">
+        <br>
+        <label for="">Fullname:</label>
+        <br>
+        <input id="Fullname" type="text" placeholder="" required>
+        <br>
+        <label for="">Type:</label>
+        <br>
+        <input id="Type" type="text" required><br>
+        <label for="seat">Seat No:</label>
+        <br>
+        <input id="seat" type="number" required>
+        <br>
+        <label for="">Date:</label><br>
+        <input id="date" type="date" required>
+        <br>
+        <label for="">Description:</label>
+        <br>
+        <textarea name="" id="description" cols="35" rows="5" placeholder="comments..."></textarea>
+        <div class="btn">
+            <button onclick="recordEntry()" type="submit">Enter</button>
+        </div>
+        <table style="background-color: rgba(255, 0, 191, 0.075);" border="1">
+            <tbody id="" style="">
+               <th colspan="6" style="background-color: rgb(250, 183, 0);">
+                <p>Transport information</p>
+                 <tr>
+                    <td style="color: rgb(116, 28, 28); font-weight: 600; font-size: 0.7rem;" colspan="1">S/N</td>
+                    <td style="font-size: 0.77rem; font-weight: 550;">Name</td>
+                    <td style="font-size: 0.77rem; font-weight: 550;">Type</td>
+                    <td style="font-size: 0.77rem; font-weight: 550;">Seat No</td>
+                    <td style="font-size: 0.77rem; font-weight: 550;" >Date</td>
+                    <td style="font-size: 0.77rem; font-weight: 550;">description</td>
+                 </tr>
+                 </th>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+    </div>
+</body>
+</html>

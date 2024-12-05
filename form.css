@@ -1,0 +1,99 @@
+body{
+    max-width: 100vh;
+    background-image: url(./roof.avif);
+    background-position: center;
+    background-size: cover;
+    align-content: center;
+    font-family:Arial, Helvetica, sans-serif;
+    /* background: linear-gradient( rgb(146, 2, 2), rgba(226, 2, 2, 0.411), rgb(109, 1, 1)); */
+}
+h2{
+text-align: center;
+}
+legend{
+    text-align: center;
+    color: black;
+    text-shadow: 0rem 0.01rem 0.1rem rgb(148, 148, 148);
+}
+input{
+    caret-color: blue;
+    outline:none;
+    background: rgba(211, 185, 113, 0.432);
+    border-radius: 0.1rem;
+    border: none;
+    border-bottom:1px solid rgb(0, 0, 255) ;
+    accent-color: rgba(139, 130, 0, 0.952);
+
+}
+fieldset{
+    border-radius: 0.15rem;
+    border: none;
+    /* border: 1px solid rgba(0, 0, 255, 0.432); */
+}
+.er{
+    font-size: 10px;
+    position: relative;
+    top: -0.2rem;
+    font-weight: 500;
+}
+.fa{
+    position: absolute;
+    left: 18.8rem;
+    top: 1rem;
+    /* font-size: 10px; */
+    border-radius: 100%;
+    color: rgb(70, 62, 62);
+    padding: 0.15rem 0.35rem;
+    border: 1.5px solid ;
+    display: none;
+}
+.name{
+    display: grid;
+    grid-template-columns: 9.2rem 9.2rem;
+    column-gap: 0.5rem;
+}
+.email{
+    width: 97.8%;
+}
+.btn{
+    text-align: center;
+}
+button{
+    color: white;
+    font-weight: 500;
+    padding: 0.3rem 0.1rem;
+    background-color: blue;
+    width: 50%;
+    border: none;
+    border-radius: 0.15rem;
+    box-shadow: 0rem 0.02rem 0.1rem rgba(0, 0, 255, 0.61);
+}
+button:hover{
+    box-shadow: 0rem 0.012rem 0.5rem rgba(248, 249, 252, 0.781);
+}
+form{
+    /* position: relative;
+    left: 10rem;     */
+    /* max-width: 100vh; */
+    background: linear-gradient(#002fff36, rgb(255, 255, 255, 60%));
+    margin: 2rem 1rem;
+    border-radius: 0.15rem;
+    box-shadow: 0px 0px 8px;
+    backdrop-filter: blur(0.16rem);
+    /* background:  linear-gradient(to right, rgba(255, 153, 0, 0.253), rgba(255, 115, 0, 0.185)); */
+}
+label{
+    font-size: 0.84rem;
+    font-weight: 520;
+}
+@media screen and (max-width:1024px) and (min-width:480px) {
+    form{
+        position: relative;
+        left : 10rem;   
+     }
+}
+p{
+    text-align: center;
+    font-size: 0.67rem;
+    font-weight: 500;
+}

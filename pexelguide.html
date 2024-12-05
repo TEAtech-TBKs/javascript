@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .myApp {
+      height: 100%;
+      overflow-y: scroll;
+    }
+    .container {
+      color: green;
+      text-align: center;
+    }
+    .input {
+      width: 300px;
+      height: 30px;
+      color: green;
+      justify-items: center;
+      padding-left: 20px;
+    }
+    .search {
+      background-color: green;
+      color: white;
+      border: none;
+      width: 70px;
+      height: 36px;
+      margin-left: -20px;
+    }
+    .display {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      margin-top: 100px;
+      grid-template-columns: repeat(3, 300px);
+      grid-template-rows: repeat(4, 400px);
+      gap: 2rem;
+      justify-content: center;
+    }
+    .items {
+      border: 1px solid grey;
+      border-radius: 10px;
+      box-shadow: 1px 1px 1px 1px lightgrey;
+    }
+    .pagination {
+      display: grid;
+      justify-content: center;
+      gap: 1rem;
+      grid-template-columns: repeat(5, 50px);
+      grid-template-rows: repeat(1, 30px);
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+    .page {
+      background-color: green;
+      border: none;
+      color: white;
+    }
+    .photo {
+      width: 100%;
+      height: 60%;
+    }
+    .photographer {
+      color: green;
+      margin-left: 20px;
+    }
+    .description {
+      color: green;
+      margin-left: 20px;
+      max-width: 250px;
+      margin-top: -10px;
+    }
+  </style>
+  <body>
+    <div class="myApp">
+      <div class="container">
+        <h2>Welcome to My Picture App</h2>
+        <h3>Search any pictures you like</h3>
+        <div class="inputDiv">
+          <input
+            id="userQuery"
+            placeholder="Enter search query..."
+            class="input"
+            type="text"
+          />
+          <button onclick="fetchPictures()" class="search">Search</button>
+        </div>
+      </div>
+      <div id="displayItems" class="display">
+        <!-- <div class="items">
+          <img
+            class="photo"
+            src="./dubai-downtown-skyline-at-sunset-d800x600.avif"
+            alt=""
+          />
+          <h4 class="photographer">Photographer: Abiola David</h4>
+          <h5 class="description">
+            Description: Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Aliquid hic, aut officia repellat amet nobis enim voluptas
+            exercitationem sunt vero nam atque. Odio, culpa numquam incidunt
+            dolorum eum itaque perferendis.
+          </h5>
+        </div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div> -->
+      </div>
+
+      <div class="pagination">
+        <button onclick="fetchPictures(1)" class="page">1</button>
+        <button onclick="fetchPictures(2)" class="page">2</button>
+        <button onclick="fetchPictures(3)" class="page">3</button>
+        <button id="prev" onclick="handlePrev()" class="page">prev</button>
+        <button id="next" onclick="handleNext()" class="page">next</button>
+      </div>
+    </div>
+
+    <script>
+      let currentPage = 1;
+      let totalPages = 1;
+      const fetchPictures = async (page = 1) => {
+        let query = document.getElementById("userQuery").value;
+        let showItems = "";
+        try {
+          let response = await fetch(
+            `https://api.pexels.com/v1/search?query=${query}&page=${page}&per_page=12`,
+            {
+              method: "GET",
+              headers: {
+                Authorization:
+                  Fh8TDRdo2pc93zTY8CPk2WYT6bzDeMl40hke7Oq7W0s4yGw2NrSgyAQJ,
+              },
+            }
+          );
+          let data = await response.json();
+
+          currentPage = page;
+          totalPages = Math.ceil(data.total_results / 12);
+
+          console.log(response);
+          console.log(data, "data");
+          let image = data.photos.map((item) => {
+            return item;
+          });
+          console.log(image);
+          for (let i in image) {
+            showItems += `<div class="items">
+          <img
+            class="photo"
+            src="${image[i].src.large}"
+            alt="${image[i].alt}"
+          />
+          <h4 class="photographer">Photographer: ${image[i].photographer}</h4>
+          <h5 class="description">
+            Description: ${image[i].alt}
+          </h5>
+        </div> `;
+          }
+          document.getElementById("displayItems").innerHTML = showItems;
+
+          document.getElementById("prev").disabled = currentPage <= 1;
+          document.getElementById("next").disabled = currentPage >= totalPages;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      const handlePrev = () => {
+        if (currentPage > 1) {
+          fetchPictures(currentPage - 1);
+        }
+      };
+
+      const handleNext = () => {
+        if (currentPage < totalPages) {
+          fetchPictures(currentPage + 1);
+        }
+      };
+    </script>
+  </body>
+</html>

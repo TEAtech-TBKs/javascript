@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="form.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <form action="">
+        <h2>Sign up</h2>
+           <!-- <i id="M" class="fa fa-male" aria-hidden="true"></i> -->
+        <fieldset>
+            <legend>personal information</legend>
+           <center> <img id="M" style="border-radius: 100%;" width="50" src="./user.png" alt=""> </center>
+            <label for="name">Full Name:</label>
+            <br>
+           <div class="name">
+            <input class="name1" type="text" placeholder="Firstname">
+            <input class="name2" type="text" placeholder="Lastname">
+           </div>
+            <br>
+            <label for="text">Email</label>
+            <br>
+            <input class="email" type="email" placeholder="Enter email">
+            <br><br>
+            <label for="text">Phone</label>
+            <br>
+            <input class="email" type="tel" placeholder="phone number">
+            <br><br>
+            <input  onclick="Female()" type="radio" name="x" id="gender">
+            <label for="gender">Female</label>
+            <br>
+            <input onclick="Male()" type="radio" name="x" id="gender">
+            <label for="gender">Male </label>
+            <br>
+            <input type="checkbox" id="check"><label  class="er" for="check">terms and conditions</label>
+            <div class="btn">
+                <button type="submit">submit</button>
+            </div>
+            <p>Already have an account ? <a href="">login</a></p>
+        </fieldset>
+    </form>
+</body>
+</html>
